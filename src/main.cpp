@@ -236,13 +236,13 @@ void selectDevices(cl_device_id* selected_device_ids, cl_uint* num_selected_devi
 	if(selected_platform >= clInfo.first.size()){
 		throw string("The selected OpenCL platform does not exist! ") +
 				string("Re-run the application with the --get-devinfo parameter ") +
-				string("in order to display the available platforms/devices in your computer.");
+				string("in order to display the platforms/devices available.");
 	}
 
 	if(selected_device >= clInfo.second[selected_platform].size()){
-		throw string("The selected OpenCL device does not found in the selected platform. ") +
+		throw string("The selected OpenCL device not found in the selected platform. ") +
 				string("Re-run the application with the --get-devinfo parameter ") +
-				string("in order to display the available platforms/devices in your computer.");
+				string("in order to display the platforms/devices available.");
 	}
 
 	selected_device_ids[0] = clInfo.second[selected_platform][selected_device];
